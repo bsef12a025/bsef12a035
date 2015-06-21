@@ -1,0 +1,42 @@
+﻿@model List<Testapp.Models.Donor>
+
+
+    <div class="row" style="align-content:center">
+        <div class="col-md-10">
+            <div class="container : col-md-12">
+                <h2 style="font-family:Algerian;color:antiquewhite">Donor table</h2>
+                <table class="table table-bordered" style="color:antiquewhite">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Blood Group</th>
+                            <th>Age</th>
+                            <th>Contact Number</th>
+                            <th>Email Address</th>
+                            <th>City</th>
+                            <th>Last donated</th>
+                            <th>Edit Donor</th>
+                            <th>Delete Donor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var s in Model)
+                        {
+                            <tr>
+                                <td>@s.name</td>
+                                <td>@s.bloodGroup</td>
+                                <td>@s.age</td>
+                                <td>@s.contactNumber</td>
+                                <td>@s.email</td>
+                                <td>@s.city</td>  
+                                <td>@s.date</td>                             
+                                <td><a href="~/AdminEditor/EditDonor/@s.Id"> Edit Donor</a></td>
+                                <td><a href="~/AdminEditor/Delete/@s.Id"> Delete Donor</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+

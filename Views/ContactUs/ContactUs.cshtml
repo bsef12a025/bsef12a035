@@ -1,0 +1,93 @@
+﻿@model Testapp.Models.Complain
+    <div class="row">
+        <div class="col-md-3">
+            <img src="@Url.Content("~/Content/Images/ci.jpg")" style="height:500px;width:300px" />
+        </div>
+        <div class="col-md-6">
+
+            <div>
+
+                @using (Html.BeginForm("addContact1", "ContactUs"))
+                {
+                    
+                     <h2 style="font-family:Algerian;color:antiquewhite">Blood Bank Contact Us</h2>
+                    <div class="form-group">
+                        @Html.Label("Name", "Name:", new { @style = "color:antiquewhite;" })
+                        @Html.TextBoxFor(m => m.Name, new  { @class="form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("email", "Email Address:", new { @style = "color:antiquewhite;" })
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("contact", "Contact Number:", new { @style = "color:antiquewhite;" })
+                        @Html.TextBoxFor(m => m.ContactNumber, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("subject", "Subject:", new { @style = "color:antiquewhite;" })
+                        <select class="form-group-lg" style="height:40px;width:670px" name="Subject">
+                            <option selected>Injury</option>
+                            <option>Suggestion</option>
+                            <option>Advertise</option>
+                            <option>Link Exchange</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                     <div class="form-group">
+                        @Html.Label("message", "Message:", new { @style = "color:antiquewhite;" })
+                         <textarea class="form-control" name="Message"></textarea>
+                    </div>
+                    
+                     <button type="submit" class="btn btn-info">Send</button>
+                }
+
+                @*<form role="form" action="/ContactUs/addContact" method="post">
+
+                    <h2 style="font-family:Algerian;color:antiquewhite">Blood Bank Contact Us</h2>
+                    <div class="form-group">
+                        <label for="Name" style="color:antiquewhite">Name:</label>
+                        <input type="text" class="form-control" id="name" name="Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" style="color:antiquewhite">Email address:</label>
+                        <input type="text" class="form-control" id="email" name="Email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact" style="color:antiquewhite">Contact Number:</label>
+                        <input type="text" class="form-control" id="number" name="ContactNumber">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="Address" style="color:antiquewhite">Subject</label><br />
+                        <select class="form-group-lg" style="height:40px;width:670px" name="Subject">
+                            <option selected>Injury</option>
+                            <option>Suggestion</option>
+                            <option>Advertise</option>
+                            <option>Link Exchange</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Address" style="color:antiquewhite">Message</label>
+                        <textarea class="form-control" name="Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-info">Send</button>
+                </form>*@
+            </div>
+
+
+        </div>
+
+        <div class="col-md-3">
+            <img src="@Url.Content("~/Content/Images/contact.jpg")" style=" height:500px;width:300px" />
+
+        </div>
+    </div>
+
+
+
+
+

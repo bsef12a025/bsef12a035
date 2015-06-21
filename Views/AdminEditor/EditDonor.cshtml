@@ -1,0 +1,60 @@
+﻿@model IQueryable<Testapp.Models.Donor>
+
+
+
+    <div class="col-md-6">
+
+        @foreach (var s in Model)
+        {
+            <form action="/AdminEditor/Edit/@s.Id" method="post">
+
+                <div class="form-group">
+                    <label for="Name" style="color:antiquewhite">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" value="@s.name">
+                </div>
+                <div class="form-group">
+                    <label for="Blood Group" style="color:antiquewhite">Blood Group:</label>
+                    <input type="text" class="form-control" id="bloodGroup" name="bloodGroup" value="@s.bloodGroup">
+                </div>
+                <div class="form-group">
+                    <label for="Age" style="color:antiquewhite">Age:</label>
+                    <input type="text" class="form-control" id="age" name="age" value="@s.age">
+                </div>
+
+                <div class="form-group">
+                    <label for="contact" style="color:antiquewhite">Contact Number:</label>
+                    <input type="text" class="form-control" id="number" name="contactNumber" value="@s.contactNumber">
+                </div>
+
+                <div class="form-group">
+                    <label for="email" style="color:antiquewhite">Email address:</label>
+                    <input type="text" class="form-control" id="email" name="email" value="@s.email">
+                </div>
+                <div class="form-group">
+                    <label for="Address" style="color:antiquewhite">City:</label>
+                    <input type="text" class="form-control" id="address" name="city" value="@s.city">
+                </div>
+                <div class="form-group">
+                    <label for="Date" style="color:antiquewhite">Date:</label>
+                    <input type="text" class="form-control" id="address" name="date" value="@s.date">
+                </div>
+
+                <button type="submit" class="btn btn-success">Edit</button>
+            </form>
+        }
+    </div>  
+
+
+                 
+             
+       
+
+    
+
+
+
+
+   
+
+
+

@@ -1,0 +1,75 @@
+﻿@model IQueryable<Testapp.Models.Donor>
+<div class="row">
+    <div class="col-md-3">
+        <img src="@Url.Content("~/Content/Images/ci.jpg")" style="height:500px;width:300px" />
+    </div>
+    <div class="col-md-6">
+
+        <div>
+            <form role="form" action="/Search/search" method="post">
+
+                <h2 style="font-family:Algerian;color:antiquewhite">Search Donor</h2>
+                <div class="form-group">
+                    <label for="bloodGroup" style="color:antiquewhite">Blood Group:</label>
+                    <select class="form-group-lg" style="height:38px;width:670px" name="_bloodGroup">
+                        <option selected>A+</option>
+                        <option>A-</option>
+                        <option>B+</option>
+                        <option>B-</option>
+                        <option>AB+</option>
+                        <option>AB-</option>
+                        <option>O+</option>
+                        <option>O-</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="city" style="color:antiquewhite">City:</label>
+                    <input type="text" class="form-control" id="city" name="_city">
+                </div>
+
+
+                <button type="submit" class="btn btn-info">Search</button>
+            </form>
+
+            <div class="container : col-md-12">
+                <h3 style="color:antiquewhite">Results</h3>
+                <table class="table table-bordered" style="color:antiquewhite">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Contact Number</th>
+                            <th>Last Donated</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var s in Model)
+                        {
+                            <tr>
+                                <td>@s.name</td>
+                                <td>@s.age</td>
+                                <td>@s.contactNumber</td>
+                                <td>@s.date</td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="col-md-3">
+        <img src="@Url.Content("~/Content/Images/contact.jpg")" style=" height:500px;width:300px" />
+
+    </div>
+</div>
+
+
+
+
+

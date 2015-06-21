@@ -1,0 +1,160 @@
+﻿   
+
+
+
+@model List<Testapp.Models.Donor>
+<div class="row">
+    <div class="col-md-3">
+        <img src="@Url.Content("~/Content/Images/ci.jpg")" style="height:500px;width:300px" />
+    </div>
+    <div class="col-md-6">
+
+        <div>
+            <form role="form" action="/Search/search" method="post">
+
+                <h2 style="font-family:Algerian;color:antiquewhite">Search Donor</h2>
+                <div class="form-group">
+                    <label for="bloodGroup" style="color:antiquewhite">Blood Group:</label>
+                    <select class="form-group-lg" style="height:38px;width:670px" name="_bloodGroup">
+                        <option selected>A+</option>
+                        <option>A-</option>
+                        <option>B+</option>
+                        <option>B-</option>
+                        <option>AB+</option>
+                        <option>AB-</option>
+                        <option>O+</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="city" style="color:antiquewhite">City:</label>
+                    <input type="text" class="form-control" id="city" name="_city">
+                </div>
+
+
+                <button type="submit" class="btn btn-info">Search</button>
+            </form>
+
+
+
+        </div>
+
+
+    </div>
+
+    <div class="col-md-3">
+        <img src="@Url.Content("~/Content/Images/contact.jpg")" style=" height:500px;width:300px" />
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@model List<Testapp.Models.Donor>
+
+
+<script>
+
+
+    $(document).ready(function () {
+        $('#search').on('click', function () {
+
+
+            
+
+            var _bloodGroup = $('#_bloodGroup').val();
+            var _city = $('#_city').val();
+
+            
+            $('#mytable').append(" <tr> <td>Name</td> <td>Age</td> <td>Contact Number</td><td>Last Donated</td></tr>");
+
+            $.getJSON('~/Search/search?_bloodGroup=' + _bloodGroup + '&_city = ' + _city, function (d) {               
+                for (a = 0 ; a < d.length ; a++) {
+                    var rec = d[a];
+                    $('#mytable').append(" <tr> <td>" + rec.name + "</td> <td>" + rec.age + "</td> <td>" + rec.contactNumber + "</td><td>" + rec.date + "</td></tr>");
+                }
+
+            })
+
+
+
+        })
+    });
+
+</script>
+
+
+
+    <div class="row">
+        <div class="col-md-3">
+            <img src="@Url.Content("~/Content/Images/ci.jpg")" style="height:500px;width:300px" />
+        </div>
+        <div class="col-md-6">
+
+            <div>
+                @*<form role="form" @*action="/Search/search" method="post">
+
+                    <h2 style="font-family:Algerian;color:antiquewhite">Search Donor</h2>
+                    <div @*class="form-group">
+                        <label for="bloodGroup" style="color:antiquewhite">Blood Group:</label>
+                        <select class="form-group-lg" style="height:38px;width:670px" name="_bloodGroup">
+                            <option selected>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+                            <option>O+</option>
+                        </select>
+                    </div>
+
+                    <div @*class="form-group">
+                        <label for="city" style="color:antiquewhite" >City:</label>
+                        <input type="text" class="form-control" id="city" name="_city">
+                    </div>
+
+
+                    <button type="button" class="btn btn-info" id="search">Search</button>
+                @*</form>
+
+             
+
+            </div>
+            <div class="container : col-md-12">
+                <h3 style="color:antiquewhite">Results</h3>
+                <table class="table table-bordered" style="color:antiquewhite" id="mytable">
+                    
+                    <tr>
+                        <td>Name</td>
+                        <td>Age</td>
+                        <td>Contact Number</td>
+                        <td>Last Donated</td>
+                    </tr>
+                   
+                  
+                </table>
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+            <img src="@Url.Content("~/Content/Images/contact.jpg")" style=" height:500px;width:300px" />
+
+        </div>
+    </div>*@
+
+
+
+
+
